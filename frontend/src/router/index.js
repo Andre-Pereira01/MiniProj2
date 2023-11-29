@@ -147,8 +147,8 @@ const routes = [
     component: () => import("@/views/Error404.vue")
   },
 
-/*ADICIONAR SPONSOR E SPECIALIST*/
- {
+  /*ADICIONAR SPONSOR E SPECIALIST*/
+  {
     path: "/admin/sponsors",
     name: "listSponsors",
     component: () => import("@/views/sponsors/ListSponsors.vue")
@@ -156,12 +156,12 @@ const routes = [
   {
     path: "/admin/sponsors/add",
     name: "addSponsor",
-    component: () => import("@/views/sponsors/AddSponsor.vue"),
+    component: () => import("@/views/sponsors/AddSponsor.vue")
   },
   {
     path: "/admin/sponsors/edit",
     name: "editSponsor",
-    component: () => import("@/views/sponsors/EditSponsor.vue"),
+    component: () => import("@/views/sponsors/EditSponsor.vue")
   },
   {
     path: "/admin/specialists",
@@ -171,12 +171,12 @@ const routes = [
   {
     path: "/admin/specialists/add",
     name: "addSpecialist",
-    component: () => import("@/views/specialists/AddSpecialist.vue"),
+    component: () => import("@/views/specialists/AddSpecialist.vue")
   },
   {
     path: "/admin/specialists/edit",
     name: "editSpecialist",
-    component: () => import("@/views/specialists/EditSpecialist.vue"),
+    component: () => import("@/views/specialists/EditSpecialist.vue")
   }
 ];
 
