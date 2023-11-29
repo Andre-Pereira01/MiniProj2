@@ -108,7 +108,7 @@ const routes = [
       rule: "user"
     }
   },
-  
+
   {
     path: "/quizzes",
     name: "quizzes",
@@ -145,6 +145,38 @@ const routes = [
   {
     path: "*",
     component: () => import("@/views/Error404.vue")
+  },
+
+/*ADICIONAR SPONSOR E SPECIALIST*/
+ {
+    path: "/admin/sponsors",
+    name: "listSponsors",
+    component: () => import("@/views/sponsors/ListSponsors.vue")
+  },
+  {
+    path: "/admin/sponsors/add",
+    name: "addSponsor",
+    component: () => import("@/views/sponsors/AddSponsor.vue"),
+  },
+  {
+    path: "/admin/sponsors/edit",
+    name: "editSponsor",
+    component: () => import("@/views/sponsors/EditSponsor.vue"),
+  },
+  {
+    path: "/admin/specialists",
+    name: "listSpecialists",
+    component: () => import("@/views/specialists/ListSpecialists.vue")
+  },
+  {
+    path: "/admin/specialists/add",
+    name: "addSpecialist",
+    component: () => import("@/views/specialists/AddSpecialist.vue"),
+  },
+  {
+    path: "/admin/specialists/edit",
+    name: "editSpecialist",
+    component: () => import("@/views/specialists/EditSpecialist.vue"),
   }
 ];
 
