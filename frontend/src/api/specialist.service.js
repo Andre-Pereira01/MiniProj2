@@ -1,6 +1,7 @@
 import API_URL from './config.js'
 
 export const specialistService = {
+    // Obtém a lista de especialistas
     async getSpecialists(token) {
         let response = await fetch(`${API_URL}/specialists`, {
             method: "GET",
@@ -64,7 +65,7 @@ export const specialistService = {
     }
 
 };
-
+//códigos de resposta
 function handleResponses(code) {
     let message = ""
     switch (code) {

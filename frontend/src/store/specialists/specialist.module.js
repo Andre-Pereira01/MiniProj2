@@ -11,10 +11,10 @@ import {
 } from "./specialist.constants";
 
 const state = {
-    specialists: [],
-    message: ""
+    specialists: [], // Armazena a lista de especialistas
+    message: ""// Armazena mensagens de status ou erro
 };
-
+// Getters para acessar o estado do módulo especialista
 const getters = {
     getSpecialists: state => state.specialists,
     getSpecialistById: state => id => {
@@ -23,12 +23,14 @@ const getters = {
     getMessage: state => state.message
 };
 
+// Ações que disparam chamadas assíncronas e podem mutar o estado
 const actions = {
     [FETCH_SPECIALISTS]: async ({
         commit,
         rootState
     }) => {
         return new Promise((resolve, reject) => {
+            //obter os specialists
             specialistService.getSpecialists(rootState.auth.token)
                 .then(
                     res => {
@@ -47,6 +49,7 @@ const actions = {
         rootState
     }, payload) => {
         return new Promise((resolve, reject) => {
+            //adiciona specialists
             specialistService.addSpecialist(rootState.auth.token, payload)
                 .then(
                     res => {
@@ -87,7 +90,7 @@ const actions = {
         });
     }
 };
-
+// Mutations para alterar o estado diretamente
 export const mutations = {
     [SET_SPECIALISTS]: (state, specialists) => {
         state.specialists = specialists;

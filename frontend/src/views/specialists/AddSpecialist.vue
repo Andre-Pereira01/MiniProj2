@@ -51,10 +51,12 @@ export default {
             group: ""
         };
     },
+      // Mapeia o getter 'getMessage' do módulo 'specialist'
     computed: {
         ...mapGetters("specialist", ["getMessage"]),
     },
     methods: {
+        // Função chamada ao enviar o formulário para adicionar um especialista
         add() {
             this.$store.dispatch(`specialist/${ADD_SPECIALIST}`, this.$data).then(
                 () => {

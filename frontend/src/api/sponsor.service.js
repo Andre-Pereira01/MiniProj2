@@ -1,6 +1,7 @@
 import API_URL from './config.js'
 
 export const sponsorService = {
+    // Obtém a lista de patrocinadores
     async getSponsors(token) {
         let response = await fetch(`${API_URL}/sponsors`, {
             method: "GET",
@@ -15,7 +16,7 @@ export const sponsorService = {
             throw Error(handleResponses(response.status));
         }
     },
-
+//adiciona 
     async addSponsor(token, payload) {
         const response = await fetch(`${API_URL}/sponsors`, {
             method: "POST",
@@ -31,7 +32,7 @@ export const sponsorService = {
             throw Error(handleResponses(response.status));
         }
     },
-
+//edita
     async editSponsor(token, payload) {
         const response = await fetch(`${API_URL}/sponsors/${payload._id}`, {
             method: "PUT",
@@ -47,7 +48,7 @@ export const sponsorService = {
             throw Error(handleResponses(response.status));
         }
     },
-
+//remove
     async removeSponsor(token, id) {
         const response = await fetch(`${API_URL}/sponsors/${id}`, {
             method: "DELETE",
@@ -64,7 +65,7 @@ export const sponsorService = {
     }
 
 };
-
+//função das respostas
 function handleResponses(code) {
     let message = ""
     switch (code) {
