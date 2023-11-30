@@ -7,6 +7,7 @@ module.exports = {
             quiz: 'quizzes',
             user: 'users',
             user_levels: "user_levels",
+            //adicionar sponsors e specialists
             sponsor: "sponsors",
             specialist: "specialists"
         }

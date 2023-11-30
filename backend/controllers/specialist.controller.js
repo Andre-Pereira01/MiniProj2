@@ -3,7 +3,7 @@ const {
     validationResult
 } = require('express-validator');
 const SpecialistMessages = require("../messages/specialist.messages");
-
+// Obtém todos os especialistas com base nos parâmetros de consulta
 exports.get = (req, res) => {
     Specialist.find(req.query, (error, specialists) => {
         if (error) throw error;
@@ -21,7 +21,7 @@ exports.get = (req, res) => {
 exports.create = (req, res) => {
     const errors = validationResult(req).array();
     if (errors.length > 0) return res.status(406).send(errors);
-
+    // Cria um novo especialista com base nos dados da requisição
     new Specialist({
         name: req.body.name,
         group: req.body.group
@@ -32,10 +32,11 @@ exports.create = (req, res) => {
         return res.header("location", "/specialists/" + specialist._id).status(message.http).send(message);
     });
 }
-
+// Atualiza um especialista com base no ID fornecido nos parâmetros da rota
 exports.update = (req, res) => {
     const errors = validationResult(req).array();
     if (errors.length > 0) return res.status(406).send(errors);
+    // Atualiza o especialista com base no ID fornecido
 
     Specialist.findOneAndUpdate({
         _id: req.params.id
